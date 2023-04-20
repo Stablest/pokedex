@@ -1,11 +1,16 @@
+import Link from "next/link"
+
 type RouterButtonProps = {
-    children: string
+    self?: boolean,
+    className?: string,
+    children: string,
+    routeName?: string,
 }
 
-export function RouterButton({ children }: RouterButtonProps) {
+export function RouterButton({ self, className, children, routeName }: RouterButtonProps) {
     return (
-        <button className="bg-light-brown w-36 h-24 text-3xl font-bold text-dark-white">
+        <Link href={routeName ?? ''} className={className}>
             {children}
-        </button>
+        </Link>
     )
 }

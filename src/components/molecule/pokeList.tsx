@@ -10,13 +10,13 @@ export function PokeList({ children }: PokeListProps) {
 
     useEffect(() => {
         const array: string[] = []
-        for (let i = 0; i < 60; i++)
+        for (let i = 0; i < 58; i++)
             array.push('Charmander')
         setPokeNames(array)
     }, [])
 
     return (
-        <div className=" w-[96%] my-8 mx-auto py-8  grid grid-cols-[repeat(auto-fit,148px)] justify-center overflow-clip gap-8 bg-dark-brown">
+        <div className="grid grid-cols-[repeat(auto-fit,178px)] justify-evenly gap-x-2 gap-y-4 h-full [&::-webkit-scrollbar]:hidden overflow-y-scroll">
             {pokeNames?.map((name, index) => <PokeBox key={index}>{name}</PokeBox>)}
         </div>
     )
